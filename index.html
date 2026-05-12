@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Rekha's Dental & ENT Clinic | Advanced Dental & ENT Care</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Dr REKHA'S DENTAL & ENT Clinic provides advanced dental and ENT treatments with compassionate care, modern technology, and patient-focused solutions." />
+  <meta name="keywords" content="Dental Clinic, ENT Clinic, Dentist, ENT Specialist, Dental Care, Ear Nose Throat Treatment, Smile Care, Healthcare Clinic, Root Canal, Dental Implants, Sinus Treatment" />
+  <meta name="author" content="Dr. Rekha's Dental & ENT Clinic" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Dr. Rekha's Dental & ENT Clinic | Advanced Dental & ENT Care" />
+  <meta property="og:description" content="Advanced Dental & ENT Care with Compassion & Excellence. International Certified. Award-Winning Care." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drrekshadentalent.com" />
+  <meta property="og:image" content="hero-doctor.png" />
+  <meta property="og:site_name" content="Dr. Rekha's Dental & ENT Clinic" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Rekha's Dental & ENT Clinic" />
+  <meta name="twitter:description" content="Advanced Dental & ENT Care with Compassion & Excellence." />
+  <meta name="twitter:image" content="hero-doctor.png" />
+
+  <!-- Favicon Placeholder -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES & RESET
+    ============================================================ */
+    :root {
+      --plum:        #4B2E83;
+      --plum-dark:   #3a2266;
+      --plum-light:  #6a45a8;
+      --lavender:    #B497D6;
+      --lavender-lt: #d4c0eb;
+      --rose:        #E8C7D1;
+      --rose-dark:   #d4a0b5;
+      --mint:        #BFE3D0;
+      --mint-dark:   #8ecfb0;
+      --white:       #ffffff;
+      --off-white:   #faf8fc;
+      --text-dark:   #1a1a2e;
+      --text-mid:    #4a4a6a;
+      --text-light:  #7a7a9a;
+      --shadow-sm:   0 2px 12px rgba(75,46,131,.10);
+      --shadow-md:   0 8px 32px rgba(75,46,131,.15);
+      --shadow-lg:   0 20px 60px rgba(75,46,131,.20);
+      --radius-sm:   8px;
+      --radius-md:   16px;
+      --radius-lg:   24px;
+      --radius-xl:   40px;
+      --transition:  all .35s cubic-bezier(.4,0,.2,1);
+      --font-body:   'Poppins', sans-serif;
+      --font-display:'Playfair Display', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a  { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       LOADER
+    ============================================================ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, var(--plum) 0%, #2d1b5e 50%, #1a0e3d 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .7s ease, visibility .7s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+
+    .loader-pulse-ring {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .loader-pulse-ring::before,
+    .loader-pulse-ring::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid var(--lavender);
+      animation: loaderRing 2s ease-in-out infinite;
+    }
+    .loader-pulse-ring::after { animation-delay: 1s; border-color: var(--mint); }
+    .loader-icon-inner {
+      position: absolute;
+      inset: 15px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px;
+    }
+    @keyframes loaderRing {
+      0%   { transform: scale(.7); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    .loader-brand {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 4vw, 32px);
+      color: var(--white);
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .loader-sub {
+      font-size: 13px;
+      color: var(--lavender-lt);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .loader-bar-wrap {
+      width: 200px; height: 3px;
+      background: rgba(255,255,255,.15);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--lavender), var(--mint));
+      border-radius: 99px;
+      animation: loaderBar 2.2s ease forwards;
+    }
+    @keyframes loaderBar {
+      0%   { width: 0; }
+      100% { width: 100%; }
+    }
+    .loader-credit {
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .5px;
+    }
+    .loader-credit a {
+      color: var(--mint);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: var(--transition);
+    }
+    .loader-credit a:hover { color: var(--lavender-lt); }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 96px 0; }
+    .section-pad-sm { padding: 64px 0; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(75,46,131,.10), rgba(180,151,214,.15));
+      border: 1px solid rgba(75,46,131,.18);
+      color: var(--plum);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 99px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .section-title span { color: var(--plum); }
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 30px; border-radius: 99px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      cursor: pointer; border: none; transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(75,46,131,.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(75,46,131,.45);
+    }
+    .btn-wa {
+      background: linear-gradient(135deg, #25d366, #1da851);
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(37,211,102,.35);
+    }
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(37,211,102,.45);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--plum);
+      color: var(--plum);
+    }
+    .btn-outline:hover {
+      background: var(--plum);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Card base */
+    .glass-card {
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       FLOATING BLOBS
+    ============================================================ */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .45;
+      pointer-events: none;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    .blob-1 { width: 400px; height: 400px; background: var(--lavender); top: -100px; right: -100px; animation-delay: 0s; }
+    .blob-2 { width: 300px; height: 300px; background: var(--rose);     bottom: -80px; left: -80px;  animation-delay: 2s; }
+    .blob-3 { width: 250px; height: 250px; background: var(--mint);     top: 40%;  right: 15%;     animation-delay: 4s; }
+    @keyframes blobFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(20px,-20px) scale(1.05); }
+      66%      { transform: translate(-15px,15px) scale(.97); }
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 0 24px;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: var(--white);
+      box-shadow: 0 4px 16px rgba(75,46,131,.35);
+    }
+    .nav-logo-text { line-height: 1.2; }
+    .nav-logo-main {
+      font-family: var(--font-display);
+      font-size: 16px; font-weight: 700;
+      color: var(--plum);
+    }
+    .nav-logo-sub { font-size: 11px; color: var(--text-light); letter-spacing: .5px; }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--plum); background: rgba(75,46,131,.07); }
+    .nav-cta {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px; border-radius: 8px;
+      transition: var(--transition);
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--plum); border-radius: 99px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; top: 76px; left: 0; right: 0;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(20px);
+      padding: 20px 24px 28px;
+      z-index: 899; border-bottom: 1px solid rgba(75,46,131,.1);
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 16px; border-radius: 10px;
+      font-size: 15px; font-weight: 500; color: var(--text-dark);
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { background: rgba(75,46,131,.07); color: var(--plum); }
+    .mobile-menu .btn { margin-top: 12px; width: 100%; justify-content: center; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--off-white) 0%, #f0eaf8 40%, #e8f5ee 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding-top: 76px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+      min-height: calc(100vh - 76px);
+      padding: 60px 0;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(75,46,131,.12), rgba(180,151,214,.18));
+      border: 1px solid rgba(75,46,131,.2);
+      color: var(--plum); font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 99px; margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--mint-dark); animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.5vw, 62px);
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+    .hero-title .plum { color: var(--plum); }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--plum-light);
+      font-weight: 600; margin-bottom: 14px;
+      font-style: italic;
+    }
+    .hero-desc { font-size: 16px; color: var(--text-mid); max-width: 500px; margin-bottom: 36px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+    .hero-trust {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: var(--text-mid);
+    }
+    .trust-item .icon { font-size: 18px; }
+
+    /* Hero image side */
+    .hero-image-wrap {
+      position: relative; display: flex; justify-content: center; align-items: flex-end;
+    }
+    .hero-img-frame {
+      position: relative;
+      width: min(450px, 100%);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(145deg, var(--lavender-lt), var(--rose));
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/5;
+    }
+    .hero-img-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; color: var(--plum);
+      background: linear-gradient(145deg, rgba(180,151,214,.25), rgba(232,199,209,.35));
+    }
+    .hero-img-placeholder .ph-icon { font-size: 80px; opacity: .5; }
+    .hero-img-placeholder p { font-size: 14px; opacity: .7; font-weight: 500; }
+
+    /* Floating badges on hero image */
+    .hero-float-badge {
+      position: absolute;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 12px;
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+    .hero-float-badge:nth-child(2) { bottom: 32px; left: -30px; animation-delay: 0s; }
+    .hero-float-badge:nth-child(3) { top: 60px;    right: -24px; animation-delay: 2s; }
+    @keyframes floatBadge {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+    .fb-icon { font-size: 28px; }
+    .fb-label { font-size: 11px; color: var(--text-light); font-weight: 500; }
+    .fb-value { font-size: 16px; font-weight: 700; color: var(--plum); }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about { background: var(--white); position: relative; overflow: hidden; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-frame {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--lavender-lt), var(--mint));
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .about-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      color: var(--plum);
+      background: linear-gradient(145deg, rgba(180,151,214,.3), rgba(191,227,208,.3));
+    }
+    .about-img-placeholder .ph-icon { font-size: 80px; opacity: .5; }
+    .about-img-placeholder p { font-size: 13px; opacity: .7; }
+    .about-accent-blob {
+      position: absolute; width: 200px; height: 200px;
+      border-radius: 50%; background: var(--rose);
+      filter: blur(50px); opacity: .35;
+      bottom: -40px; left: -40px; z-index: -1;
+    }
+    .about-cert-badge {
+      position: absolute; bottom: 28px; right: -24px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-md);
+      padding: 16px 22px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .acb-icon { font-size: 32px; margin-bottom: 4px; }
+    .acb-label { font-size: 11px; color: var(--text-light); }
+    .acb-value { font-size: 15px; font-weight: 700; color: var(--plum); }
+
+    /* Stats row */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 16px; margin: 40px 0 32px;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, rgba(75,46,131,.06), rgba(180,151,214,.1));
+      border: 1px solid rgba(75,46,131,.12);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 34px; font-weight: 700;
+      color: var(--plum); margin-bottom: 4px;
+    }
+    .stat-label { font-size: 13px; color: var(--text-mid); font-weight: 500; }
+
+    .about-list { margin: 0 0 28px; }
+    .about-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid rgba(75,46,131,.07);
+      font-size: 15px; color: var(--text-mid);
+    }
+    .about-list li:last-child { border-bottom: none; }
+    .about-list li .check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 11px; flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services {
+      background: linear-gradient(135deg, var(--off-white) 0%, #f0eaf8 100%);
+      position: relative; overflow: hidden;
+    }
+    .services-tabs {
+      display: flex; gap: 12px; margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .stab {
+      padding: 10px 24px; border-radius: 99px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      border: 2px solid transparent; transition: var(--transition);
+      color: var(--text-mid); background: rgba(255,255,255,.7);
+      border-color: rgba(75,46,131,.15);
+    }
+    .stab.active {
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      color: var(--white); border-color: transparent;
+      box-shadow: 0 4px 18px rgba(75,46,131,.35);
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      border: 1px solid rgba(75,46,131,.1);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--plum), var(--lavender), var(--mint));
+      transform: scaleX(0); transform-origin: left;
+      transition: var(--transition);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(75,46,131,.18);
+    }
+    .svc-icon {
+      width: 60px; height: 60px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(75,46,131,.1), rgba(180,151,214,.18));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .service-card:hover .svc-icon {
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+    }
+    .svc-title {
+      font-size: 17px; font-weight: 700; color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .svc-desc { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+    /* ============================================================
+       WHY CHOOSE US
+    ============================================================ */
+    #why { background: var(--white); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 28px;
+    }
+    .why-card {
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(75,46,131,.04), rgba(180,151,214,.08));
+      border: 1px solid rgba(75,46,131,.1);
+      transition: var(--transition);
+    }
+    .why-card:hover {
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .why-card:hover .why-icon { background: rgba(255,255,255,.2); }
+    .why-card:hover .why-title { color: var(--white); }
+    .why-card:hover .why-desc  { color: rgba(255,255,255,.8); }
+    .why-icon {
+      width: 56px; height: 56px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(75,46,131,.12), rgba(180,151,214,.2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .why-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; transition: var(--transition); }
+    .why-desc  { font-size: 14px; color: var(--text-mid); line-height: 1.65; transition: var(--transition); }
+
+    /* ============================================================
+       GALLERY
+    ============================================================ */
+    #gallery {
+      background: linear-gradient(135deg, var(--off-white) 0%, #edf6f2 100%);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    .gallery-item {
+      border-radius: var(--radius-lg); overflow: hidden;
+      position: relative; cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-img-ph {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(75,46,131,.12), rgba(180,151,214,.2));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px; transition: var(--transition);
+    }
+    .gallery-item:nth-child(2) .gallery-img-ph,
+    .gallery-item:nth-child(3) .gallery-img-ph { aspect-ratio: 1; }
+    .gallery-item:nth-child(5) .gallery-img-ph,
+    .gallery-item:nth-child(6) .gallery-img-ph { aspect-ratio: 4/3; }
+    .gallery-img-ph .ph-icon { font-size: 40px; color: var(--plum); opacity: .5; }
+    .gallery-img-ph p { font-size: 13px; color: var(--plum-light); font-weight: 500; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(75,46,131,.7), transparent);
+      opacity: 0; transition: var(--transition);
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gallery-overlay span {
+      color: var(--white); font-size: 14px; font-weight: 600;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover .gallery-img-ph {
+      background: linear-gradient(135deg, rgba(75,46,131,.2), rgba(180,151,214,.3));
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    #testimonials { background: var(--white); }
+    .testi-slider-wrap { position: relative; overflow: hidden; }
+    .testi-slider {
+      display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .testi-card {
+      min-width: calc(33.33% - 16px);
+      margin-right: 24px;
+      padding: 36px 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(75,46,131,.04), rgba(180,151,214,.08));
+      border: 1px solid rgba(75,46,131,.1);
+      flex-shrink: 0;
+    }
+    .testi-stars { color: #f5a623; font-size: 18px; letter-spacing: 2px; margin-bottom: 18px; }
+    .testi-text {
+      font-size: 15px; color: var(--text-mid); line-height: 1.8;
+      font-style: italic; margin-bottom: 24px;
+    }
+    .testi-text::before { content: '\201C'; font-size: 40px; color: var(--lavender); line-height: 0; vertical-align: -16px; margin-right: 4px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--plum), var(--lavender));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--white); font-weight: 700; font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 15px; color: var(--text-dark); }
+    .testi-role { font-size: 12px; color: var(--text-light); }
+
+    .testi-controls {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-top: 40px;
+    }
+    .testi-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(75,46,131,.2); background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 18px; color: var(--plum);
+      transition: var(--transition);
+    }
+    .testi-btn:hover {
+      background: var(--plum); color: var(--white); border-color: var(--plum);
+    }
+    .testi-dots { display: flex; gap: 8px; }
+    .tdot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(75,46,131,.2); cursor: pointer; transition: var(--transition);
+    }
+    .tdot.active { background: var(--plum); width: 24px; border-radius: 99px; }
+
+    /* ============================================================
+       APPOINTMENT
+    ============================================================ */
+    #appointment {
+      background: linear-gradient(135deg, var(--plum) 0%, #2d1b5e 50%, #1a4a3a 100%);
+      position: relative; overflow: hidden;
+    }
+    #appointment .section-title { color: var(--white); }
+    #appointment .section-sub  { color: rgba(255,255,255,.7); }
+    #appointment .tag { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.25); color: var(--white); }
+
+    .appt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .appt-info { color: rgba(255,255,255,.85); }
+    .appt-info h3 { font-family: var(--font-display); font-size: 28px; color: var(--white); margin-bottom: 16px; }
+    .appt-info p  { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,.75); margin-bottom: 28px; }
+    .appt-contact-list li {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.85); font-size: 15px;
+    }
+    .appt-contact-list li .ic {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(255,255,255,.12); display: flex; align-items: center;
+      justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+
+    .appt-form-card {
+      background: rgba(255,255,255,.97);
+      border-radius: var(--radius-xl);
+      padding: 44px 40px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+    }
+    .form-title { font-family: var(--font-display); font-size: 24px; color: var(--plum); margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--text-mid); margin-bottom: 8px; letter-spacing: .3px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 13px 18px;
+      border: 1.5px solid rgba(75,46,131,.18);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 15px;
+      color: var(--text-dark); background: var(--white);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--plum);
+      box-shadow: 0 0 0 3px rgba(75,46,131,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      color: var(--white); border: none;
+      border-radius: 99px; font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 8px 24px rgba(75,46,131,.4);
+      margin-top: 8px;
+    }
+    .form-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(75,46,131,.5);
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    #faq { background: var(--off-white); }
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      border: 1px solid rgba(75,46,131,.1);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-item:hover { border-color: rgba(75,46,131,.22); }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 26px; cursor: pointer;
+      font-weight: 600; font-size: 16px; color: var(--text-dark);
+    }
+    .faq-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(75,46,131,.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--plum); flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--plum); color: white; }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a-inner {
+      padding: 0 26px 22px;
+      font-size: 15px; color: var(--text-mid); line-height: 1.75;
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-cards { display: flex; flex-direction: column; gap: 20px; }
+    .contact-card {
+      display: flex; align-items: flex-start; gap: 18px;
+      padding: 24px; border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(75,46,131,.04), rgba(180,151,214,.08));
+      border: 1px solid rgba(75,46,131,.1); transition: var(--transition);
+    }
+    .contact-card:hover { transform: translateX(6px); border-color: rgba(75,46,131,.22); }
+    .contact-card-icon {
+      width: 52px; height: 52px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--plum), var(--plum-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: var(--white); flex-shrink: 0;
+    }
+    .contact-card-title { font-weight: 700; font-size: 16px; color: var(--text-dark); margin-bottom: 4px; }
+    .contact-card-text  { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+    .map-frame {
+      border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: var(--shadow-lg); aspect-ratio: 4/3;
+    }
+    .map-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(75,46,131,.1), rgba(191,227,208,.2));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      min-height: 320px;
+    }
+    .map-placeholder .ph-icon { font-size: 60px; color: var(--plum); opacity: .5; }
+    .map-placeholder p { color: var(--plum-light); font-size: 14px; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer {
+      background: linear-gradient(135deg, #1a0e3d 0%, #0d1f17 100%);
+      padding: 72px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand .nav-logo-main { font-size: 18px; color: var(--lavender-lt); }
+    .footer-brand .nav-logo-sub  { color: rgba(255,255,255,.45); }
+    .footer-desc {
+      font-size: 14px; color: rgba(255,255,255,.55);
+      line-height: 1.8; margin: 18px 0 24px; max-width: 300px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .soc-btn {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: rgba(255,255,255,.6);
+      transition: var(--transition); cursor: pointer; text-decoration: none;
+    }
+    .soc-btn:hover { background: var(--plum); color: var(--white); transform: translateY(-3px); }
+    .footer-col h4 {
+      font-size: 15px; font-weight: 700; color: var(--white);
+      margin-bottom: 20px; letter-spacing: .5px;
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px; color: rgba(255,255,255,.5);
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--lavender-lt); padding-left: 6px; }
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,.35); }
+    .footer-bottom a { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom a:hover { color: var(--mint-dark); }
+
+    /* ============================================================
+       FLOATING ELEMENTS
+    ============================================================ */
+    #wa-float {
+      position: fixed; bottom: 30px; right: 28px; z-index: 800;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #1da851);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; color: var(--white);
+      box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      cursor: pointer; transition: var(--transition);
+      text-decoration: none;
+    }
+    #wa-float:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,.65); }
+    #wa-float::before {
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
+      border: 2px solid rgba(37,211,102,.4); animation: waRing 2s infinite;
+    }
+    @keyframes waRing { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.5);opacity:0} }
+
+    #back-top {
+      position: fixed; bottom: 100px; right: 28px; z-index: 800;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
+      border: 1px solid rgba(75,46,131,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--plum); cursor: pointer;
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+      opacity: 0; pointer-events: none;
+    }
+    #back-top.visible { opacity: 1; pointer-events: all; }
+    #back-top:hover { background: var(--plum); color: var(--white); transform: translateY(-3px); }
+
+    /* Sticky bottom CTA for mobile */
+    #sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 700;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(16px);
+      padding: 14px 20px; gap: 12px;
+      border-top: 1px solid rgba(75,46,131,.12);
+      box-shadow: 0 -4px 24px rgba(75,46,131,.12);
+    }
+    #sticky-cta .btn { flex: 1; justify-content: center; font-size: 14px; padding: 12px 16px; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .appt-grid   { grid-template-columns: 1fr; }
+      .appt-info   { display: none; }
+      .appt-form-card { max-width: 600px; margin: 0 auto; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid    { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-desc    { margin: 0 auto 36px; }
+      .hero-btns    { justify-content: center; }
+      .hero-trust   { justify-content: center; }
+      .hero-image-wrap { order: -1; }
+      .hero-img-frame { width: min(360px, 90vw); }
+      .about-grid   { grid-template-columns: 1fr; }
+      .about-img-wrap { max-width: 480px; margin: 0 auto; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(4) { grid-column: span 2; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .testi-card   { min-width: calc(50% - 12px); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta   { display: none; }
+      .hamburger { display: flex; }
+      .section-pad { padding: 72px 0; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid   { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item { grid-column: span 1 !important; }
+      .testi-card { min-width: 85vw; }
+      .form-row   { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      #sticky-cta { display: flex; }
+      body { padding-bottom: 80px; }
+    }
+    @media (max-width: 480px) {
+      .hero-btns  { flex-direction: column; align-items: center; }
+      .hero-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
+      .appt-form-card { padding: 28px 22px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div id="loader" role="status" aria-label="Loading website">
+    <div class="loader-pulse-ring">
+      <div class="loader-icon-inner">🦷</div>
+    </div>
+    <p class="loader-brand">Dr. Rekha's Dental & ENT Clinic</p>
+    <p class="loader-sub">Excellence in Healthcare</p>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-credit">Made with ❤️ by <a href="https://yourportfolio.com" target="_blank" rel="noopener">Prateek</a></p>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Dr Rekha's Clinic Home">
+        <div class="nav-logo-icon" aria-hidden="true">🦷</div>
+        <div class="nav-logo-text">
+          <div class="nav-logo-main">Dr. Rekha's Clinic</div>
+          <div class="nav-logo-sub">Dental &amp; ENT Specialists</div>
+        </div>
+      </a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#about"        role="menuitem">About</a></li>
+        <li role="none"><a href="#services"     role="menuitem">Services</a></li>
+        <li role="none"><a href="#why"          role="menuitem">Why Us</a></li>
+        <li role="none"><a href="#gallery"      role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
+        <li role="none"><a href="#contact"      role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-wa" aria-label="WhatsApp Consultation">
+          <span>💬</span> WhatsApp
+        </a>
+        <a href="#appointment" class="btn btn-primary" aria-label="Book Appointment">Book Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about"        onclick="closeMobileMenu()">About</a>
+    <a href="#services"     onclick="closeMobileMenu()">Services</a>
+    <a href="#why"          onclick="closeMobileMenu()">Why Us</a>
+    <a href="#gallery"      onclick="closeMobileMenu()">Gallery</a>
+    <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+    <a href="#faq"          onclick="closeMobileMenu()">FAQ</a>
+    <a href="#contact"      onclick="closeMobileMenu()">Contact</a>
+    <a href="#appointment"  class="btn btn-primary" onclick="closeMobileMenu()">📅 Book Appointment</a>
+    <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="btn btn-wa" onclick="closeMobileMenu()">💬 WhatsApp</a>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" aria-label="Hero section">
+    <!-- Floating blobs -->
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <div class="hero-badge" aria-label="Clinic tagline">
+            <span class="dot"></span>
+            Trusted Healthcare Since 2010
+          </div>
+          <h1 class="hero-title">
+            <span class="plum">Dr. Rekha's</span><br>
+            Dental &amp; ENT<br>Clinic
+          </h1>
+          <p class="hero-sub">Advanced Care with Compassion &amp; Excellence</p>
+          <p class="hero-desc">
+            Experience holistic dental and ENT care powered by modern technology, compassionate expertise, and a patient-first approach. Your health and smile deserve the very best.
+          </p>
+          <div class="hero-btns">
+            <a href="#appointment" class="btn btn-primary" aria-label="Book an appointment">
+              📅 Book Appointment
+            </a>
+            <a href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20a%20consultation." target="_blank" rel="noopener" class="btn btn-wa" aria-label="WhatsApp consultation">
+              💬 WhatsApp Consultation
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item"><span class="icon">✅</span> International Certified</div>
+            <div class="trust-item"><span class="icon">🏆</span> Award Winning</div>
+            <div class="trust-item"><span class="icon">😊</span> 5000+ Happy Patients</div>
+          </div>
+        </div>
+
+        <!-- Right: Doctor Image -->
+        <div class="hero-image-wrap reveal-right">
+          <div class="hero-img-frame">
+            <img src="hero-doctor.png" alt="Dr. Rekha - Dental and ENT Specialist" loading="eager"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="hero-img-placeholder" style="display:none;">
+              <div class="ph-icon">👩‍⚕️</div>
+              <p>hero-doctor.png<br><small>900×1100px</small></p>
+            </div>
+          </div>
+
+          <!-- Floating badge: Experience -->
+          <div class="hero-float-badge" aria-label="Years of experience">
+            <span class="fb-icon">🏅</span>
+            <div>
+              <div class="fb-label">Experience</div>
+              <div class="fb-value">15+ Years</div>
+            </div>
+          </div>
+          <!-- Floating badge: Patients -->
+          <div class="hero-float-badge" aria-label="Happy patients">
+            <span class="fb-icon">💗</span>
+            <div>
+              <div class="fb-label">Happy Patients</div>
+              <div class="fb-value">5000+</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="section-pad" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Image -->
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-frame">
+            <img src="about-doctor.jpg" alt="Dr. Rekha consulting a patient" loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="about-img-placeholder" style="display:none;">
+              <div class="ph-icon">🩺</div>
+              <p>about-doctor.jpg<br><small>700×850px</small></p>
+            </div>
+          </div>
+          <div class="about-accent-blob" aria-hidden="true"></div>
+          <div class="about-cert-badge" aria-label="International certification">
+            <div class="acb-icon">🏆</div>
+            <div class="acb-label">Certification</div>
+            <div class="acb-value">International</div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-content reveal-right">
+          <div class="tag">👩‍⚕️ About Dr. Rekha</div>
+          <h2 class="section-title" id="about-title">
+            Meet <span>Dr. Rekha</span>
+          </h2>
+          <p class="section-sub">
+            Owner &amp; Founder of Dr. Rekha's Dental &amp; ENT Clinic — bringing over 15 years of compassionate, internationally-certified healthcare excellence to every patient.
+          </p>
+
+          <!-- Stats -->
+          <div class="stats-grid" role="list" aria-label="Clinic statistics">
+            <div class="stat-card reveal" role="listitem">
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.1s" role="listitem">
+              <div class="stat-num">5K+</div>
+              <div class="stat-label">Happy Patients</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.2s" role="listitem">
+              <div class="stat-num">30+</div>
+              <div class="stat-label">Treatments Offered</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.3s" role="listitem">
+              <div class="stat-num">8+</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+          </div>
+
+          <ul class="about-list" role="list" aria-label="Doctor highlights">
+            <li><span class="check" aria-hidden="true">✓</span> International Certified Dental &amp; ENT Specialist</li>
+            <li><span class="check" aria-hidden="true">✓</span> Award Winner — Best Dentist in the Region 🏆</li>
+            <li><span class="check" aria-hidden="true">✓</span> Expert in Advanced &amp; Cosmetic Dental Procedures</li>
+            <li><span class="check" aria-hidden="true">✓</span> Specialist in Chronic ENT &amp; Allergy Management</li>
+            <li><span class="check" aria-hidden="true">✓</span> Patient-Focused, Compassionate Treatment Philosophy</li>
+          </ul>
+
+          <a href="#appointment" class="btn btn-primary">Book a Consultation</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES SECTION
+  ============================================================ -->
+  <section id="services" class="section-pad" aria-labelledby="services-title">
+    <div class="blob blob-1" style="opacity:.25; top:-80px; left:-60px; right:auto;" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">🩺 Our Specialities</div>
+        <h2 class="section-title" id="services-title">Expert <span>Services</span></h2>
+        <p class="section-sub">Comprehensive dental and ENT care tailored to your unique health needs with modern technology and gentle expertise.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="services-tabs" role="tablist" aria-label="Service categories">
+        <button class="stab active" role="tab" aria-selected="true" onclick="switchTab('dental', this)">🦷 Dental Services</button>
+        <button class="stab" role="tab" aria-selected="false" onclick="switchTab('ent', this)">👂 ENT Services</button>
+      </div>
+
+      <!-- Dental -->
+      <div class="services-grid" id="tab-dental" role="tabpanel" aria-label="Dental services">
+        <div class="service-card reveal" style="transition-delay:.0s">
+          <div class="svc-icon" aria-hidden="true">🔍</div>
+          <div class="svc-title">Dental Checkup</div>
+          <div class="svc-desc">Comprehensive oral examinations to detect cavities, gum disease, and ensure your overall dental health is optimal.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.07s">
+          <div class="svc-icon" aria-hidden="true">✨</div>
+          <div class="svc-title">Teeth Cleaning</div>
+          <div class="svc-desc">Professional scaling and polishing to remove plaque, tartar, and stains for a fresh, healthy, sparkling smile.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.14s">
+          <div class="svc-icon" aria-hidden="true">🦷</div>
+          <div class="svc-title">Root Canal Treatment</div>
+          <div class="svc-desc">Pain-free root canal therapy using advanced rotary techniques to save your natural tooth comfortably.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.21s">
+          <div class="svc-icon" aria-hidden="true">🏗️</div>
+          <div class="svc-title">Dental Implants</div>
+          <div class="svc-desc">Premium titanium implants offering a permanent, natural-looking solution to replace missing teeth.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.28s">
+          <div class="svc-icon" aria-hidden="true">😁</div>
+          <div class="svc-title">Smile Designing</div>
+          <div class="svc-desc">Transform your smile with veneers, bonding, whitening, and full-mouth rehabilitation for dream aesthetics.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.35s">
+          <div class="svc-icon" aria-hidden="true">🔧</div>
+          <div class="svc-title">Tooth Extraction</div>
+          <div class="svc-desc">Gentle, painless extractions — including wisdom teeth — using modern anaesthesia and precise technique.</div>
+        </div>
+      </div>
+
+      <!-- ENT -->
+      <div class="services-grid" id="tab-ent" role="tabpanel" aria-label="ENT services" style="display:none;">
+        <div class="service-card reveal">
+          <div class="svc-icon" aria-hidden="true">👂</div>
+          <div class="svc-title">Ear Infection Treatment</div>
+          <div class="svc-desc">Accurate diagnosis and effective treatment of acute and chronic ear infections to restore your hearing health.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.07s">
+          <div class="svc-icon" aria-hidden="true">💨</div>
+          <div class="svc-title">Sinus Treatment</div>
+          <div class="svc-desc">Advanced sinus care including endoscopic procedures, medication, and lifestyle guidance for long-term relief.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.14s">
+          <div class="svc-icon" aria-hidden="true">🌸</div>
+          <div class="svc-title">Allergy Care</div>
+          <div class="svc-desc">Personalised allergy testing and immunotherapy plans to manage nasal, throat, and ear allergies effectively.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.21s">
+          <div class="svc-icon" aria-hidden="true">🎧</div>
+          <div class="svc-title">Hearing Consultation</div>
+          <div class="svc-desc">Comprehensive audiological assessment and hearing aid guidance using the latest audiometric technology.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.28s">
+          <div class="svc-icon" aria-hidden="true">🗣️</div>
+          <div class="svc-title">Throat Disorders</div>
+          <div class="svc-desc">Expert care for tonsillitis, pharyngitis, voice disorders, and other throat conditions with minimal intervention.</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.35s">
+          <div class="svc-icon" aria-hidden="true">👃</div>
+          <div class="svc-title">Nasal Care</div>
+          <div class="svc-desc">Treatment for deviated septum, nasal polyps, nosebleeds, and chronic rhinitis with surgical and non-surgical options.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE US
+  ============================================================ -->
+  <section id="why" class="section-pad" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">💎 Our Promise</div>
+        <h2 class="section-title" id="why-title">Why Choose <span>Dr. Rekha's Clinic</span></h2>
+        <p class="section-sub">We combine clinical excellence with warm, personalised care to deliver an unmatched healthcare experience.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal" style="transition-delay:.0s">
+          <div class="why-icon" aria-hidden="true">🔬</div>
+          <div class="why-title">Advanced Equipment</div>
+          <div class="why-desc">State-of-the-art dental chairs, digital X-rays, 3D imaging, and ENT endoscopes for precise, modern diagnosis.</div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.1s">
+          <div class="why-icon" aria-hidden="true">🧼</div>
+          <div class="why-title">Hygienic Environment</div>
+          <div class="why-desc">Fully sterilized instruments and stringent infection control protocols maintaining the highest safety standards.</div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.2s">
+          <div class="why-icon" aria-hidden="true">💜</div>
+          <div class="why-title">Personalised Care</div>
+          <div class="why-desc">Every patient receives a tailored treatment plan designed around their unique health goals and comfort preferences.</div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.3s">
+          <div class="why-icon" aria-hidden="true">🌍</div>
+          <div class="why-title">International Standards</div>
+          <div class="why-desc">Treatments adhere to global protocols and evidence-based guidelines for the safest, most effective outcomes.</div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.4s">
+          <div class="why-icon" aria-hidden="true">👨‍⚕️</div>
+          <div class="why-title">Experienced Team</div>
+          <div class="why-desc">Highly qualified specialists and trained support staff delivering care with expertise, empathy, and precision.</div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.5s">
+          <div class="why-icon" aria-hidden="true">⭐</div>
+          <div class="why-title">Patient Satisfaction</div>
+          <div class="why-desc">Consistently rated 5 stars by thousands of patients for exceptional outcomes and compassionate service.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY SECTION
+  ============================================================ -->
+  <section id="gallery" class="section-pad" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">📸 Our Clinic</div>
+        <h2 class="section-title" id="gallery-title">A Peek Inside Our <span>World-Class</span> Facility</h2>
+        <p class="section-sub">Designed for comfort, equipped for excellence — our clinic offers a calming, modern environment for all patients.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <div class="gallery-img-ph">
+            <img src="gallery-clinic-exterior.jpg" alt="Clinic exterior view" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">🏥</div>
+            <p style="display:none;">gallery-clinic-exterior.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>Clinic Exterior</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:.1s">
+          <div class="gallery-img-ph">
+            <img src="gallery-clinic-interior.jpg" alt="Clinic interior reception" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">🛋️</div>
+            <p style="display:none;">gallery-clinic-interior.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>Clinic Interior</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:.2s">
+          <div class="gallery-img-ph">
+            <img src="gallery-treatment-room.jpg" alt="Treatment room" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">🦷</div>
+            <p style="display:none;">gallery-treatment-room.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>Treatment Room</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:.3s">
+          <div class="gallery-img-ph">
+            <img src="gallery-doctor-consultation.jpg" alt="Doctor consulting patient" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">🩺</div>
+            <p style="display:none;">gallery-doctor-consultation.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>Doctor Consultation</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:.4s">
+          <div class="gallery-img-ph">
+            <img src="gallery-dental-equipment.jpg" alt="Advanced dental equipment" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">🔬</div>
+            <p style="display:none;">gallery-dental-equipment.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>Dental Equipment</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:.5s">
+          <div class="gallery-img-ph">
+            <img src="gallery-ent-equipment.jpg" alt="ENT equipment and setup" loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.ph-icon').style.display='block'; this.parentElement.querySelector('p').style.display='block';" />
+            <div class="ph-icon" style="display:none;">👂</div>
+            <p style="display:none;">gallery-ent-equipment.jpg</p>
+          </div>
+          <div class="gallery-overlay"><span>ENT Equipment</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+  ============================================================ -->
+  <section id="testimonials" class="section-pad" aria-labelledby="testi-title">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">💬 Patient Reviews</div>
+        <h2 class="section-title" id="testi-title">What Our <span>Patients</span> Say</h2>
+        <p class="section-sub">Real stories from real patients who experienced the Dr. Rekha difference.</p>
+      </div>
+
+      <div class="testi-slider-wrap reveal">
+        <div class="testi-slider" id="testiSlider" role="list" aria-label="Patient testimonials">
+
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-text">Dr. Rekha treated my root canal and I felt absolutely no pain. The clinic is immaculate, the staff are warm, and the results are incredible. I'll never go anywhere else!</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">P</div>
+              <div><div class="testi-name">Priya Sharma</div><div class="testi-role">Root Canal Patient</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-text">My chronic sinus issue of 5 years was resolved in just 3 sessions. Dr. Rekha's diagnosis was spot-on and treatment was gentle. Highly recommended for ENT problems!</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">R</div>
+              <div><div class="testi-name">Rajesh Mehta</div><div class="testi-role">Sinus Treatment Patient</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-text">The smile makeover I got here completely transformed my confidence. Dr. Rekha took time to understand exactly what I wanted and delivered beyond my expectations.</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">A</div>
+              <div><div class="testi-name">Anita Verma</div><div class="testi-role">Smile Design Patient</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-text">My daughter was terrified of dentists. Dr. Rekha made her feel so comfortable and safe. The whole experience was painless and she's no longer scared. Truly remarkable!</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">S</div>
+              <div><div class="testi-name">Sunita Gupta</div><div class="testi-role">Paediatric Dental Patient</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <p class="testi-text">Got dental implants here and they look completely natural. The procedure was explained clearly, performed expertly, and the aftercare support was wonderful. 5 stars!</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">V</div>
+              <div><div class="testi-name">Vikram Singh</div><div class="testi-role">Dental Implant Patient</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testi-controls" aria-label="Testimonial navigation">
+        <button class="testi-btn" onclick="moveSlider(-1)" aria-label="Previous testimonial">←</button>
+        <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial indicators"></div>
+        <button class="testi-btn" onclick="moveSlider(1)"  aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       APPOINTMENT SECTION
+  ============================================================ -->
+  <section id="appointment" class="section-pad" aria-labelledby="appt-title">
+    <div class="blob blob-3" style="opacity:.12;" aria-hidden="true"></div>
+    <div class="container">
+      <div class="appt-grid">
+
+        <!-- Info -->
+        <div class="appt-info reveal-left">
+          <div class="tag">📅 Get in Touch</div>
+          <h2 class="section-title" id="appt-title">Book Your <span style="color:var(--lavender-lt)">Appointment</span></h2>
+          <h3>Schedule a Visit Today</h3>
+          <p>Take the first step toward better health. Fill the form and we'll send your details directly via WhatsApp for instant confirmation. No waiting, no hassle.</p>
+          <ul class="appt-contact-list" role="list">
+            <li><span class="ic" aria-hidden="true">📍</span> 123 Health Avenue, Medical District, Your City – 110001</li>
+            <li><span class="ic" aria-hidden="true">📞</span> +91 99999 99999 | +91 88888 88888</li>
+            <li><span class="ic" aria-hidden="true">✉️</span> drrekha@drclinic.com</li>
+            <li><span class="ic" aria-hidden="true">🕐</span> Mon–Sat: 9AM–8PM | Sun: 10AM–2PM</li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <div class="appt-form-card reveal-right">
+          <h3 class="form-title">📅 Appointment Request</h3>
+          <div id="apptForm" aria-label="Appointment booking form">
+            <div class="form-group">
+              <label for="appt-name">Full Name *</label>
+              <input type="text" id="appt-name" placeholder="Your full name" required aria-required="true" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="appt-phone">Phone Number *</label>
+                <input type="tel" id="appt-phone" placeholder="+91 XXXXX XXXXX" required aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="appt-date">Preferred Date *</label>
+                <input type="date" id="appt-date" required aria-required="true" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="appt-service">Service Needed *</label>
+              <select id="appt-service" required aria-required="true">
+                <option value="">— Select a Service —</option>
+                <optgroup label="🦷 Dental Services">
+                  <option value="Dental Checkup">Dental Checkup</option>
+                  <option value="Teeth Cleaning">Teeth Cleaning</option>
+                  <option value="Root Canal Treatment">Root Canal Treatment</option>
+                  <option value="Dental Implants">Dental Implants</option>
+                  <option value="Smile Designing">Smile Designing</option>
+                  <option value="Tooth Extraction">Tooth Extraction</option>
+                </optgroup>
+                <optgroup label="👂 ENT Services">
+                  <option value="Ear Infection Treatment">Ear Infection Treatment</option>
+                  <option value="Sinus Treatment">Sinus Treatment</option>
+                  <option value="Allergy Care">Allergy Care</option>
+                  <option value="Hearing Consultation">Hearing Consultation</option>
+                  <option value="Throat Disorders">Throat Disorders</option>
+                  <option value="Nasal Care">Nasal Care</option>
+                </optgroup>
+                <option value="General Consultation">General Consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="appt-msg">Message / Concerns</label>
+              <textarea id="appt-msg" placeholder="Describe your concern or any special requirements..." aria-label="Message or concerns"></textarea>
+            </div>
+            <button class="form-submit" onclick="bookViaWhatsApp()" type="button" aria-label="Book appointment via WhatsApp">
+              <span>💬</span> Book via WhatsApp
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ SECTION
+  ============================================================ -->
+  <section id="faq" class="section-pad" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">❓ FAQ</div>
+        <h2 class="section-title" id="faq-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-sub">Everything you need to know before your visit.</p>
+      </div>
+      <div class="faq-list reveal" role="list" aria-label="FAQ list">
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            How do I book an appointment?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">You can book an appointment by filling out the form on this page and it will be sent directly via WhatsApp. You can also call us at +91 99999 99999 or walk in during clinic hours (Mon–Sat 9AM–8PM).</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            Is root canal treatment painful?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">No! With modern anaesthesia and rotary techniques, root canal treatment at our clinic is virtually painless. Most patients are surprised at how comfortable the experience is. You will feel pressure but not pain.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            What are the clinic timings?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Our clinic is open Monday to Saturday from 9:00 AM to 8:00 PM. On Sundays we are open from 10:00 AM to 2:00 PM for consultations. We recommend calling ahead to confirm availability for Sunday slots.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            Do you treat children at this clinic?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Absolutely! We welcome patients of all ages including children. Our team is specially trained to make young patients feel safe, relaxed, and comfortable throughout their dental or ENT treatment.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            What happens during my first ENT consultation?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">During your first ENT consultation, Dr. Rekha will review your medical history, discuss your symptoms, and conduct a thorough physical examination of your ears, nose, and throat. A tailored treatment plan will then be discussed with you.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            Are your instruments sterilized between patients?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Yes, absolutely. We follow strict sterilisation protocols using autoclaved instruments for every patient. Single-use disposables are used wherever possible to guarantee the highest level of infection control and patient safety.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter') toggleFaq(this)">
+            How much does a dental implant cost?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Dental implant costs vary based on the number of implants, bone condition, and crown type required. We offer a free initial consultation where Dr. Rekha will assess your case and provide a transparent, detailed treatment estimate.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="section-pad" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="tag">📍 Visit Us</div>
+        <h2 class="section-title" id="contact-title">Get In <span>Touch</span></h2>
+        <p class="section-sub">We're here for you — reach out any time and our friendly team will be happy to help.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-cards reveal-left">
+          <div class="contact-card" role="region" aria-label="Clinic address">
+            <div class="contact-card-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="contact-card-title">Clinic Address</div>
+              <div class="contact-card-text">123 Health Avenue, Medical District,<br>Your City, State – 110001, India</div>
+            </div>
+          </div>
+          <div class="contact-card" role="region" aria-label="Phone numbers">
+            <div class="contact-card-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="contact-card-title">Phone Numbers</div>
+              <div class="contact-card-text">+91 99999 99999 (Primary)<br>+91 88888 88888 (Alternate)</div>
+            </div>
+          </div>
+          <div class="contact-card" role="region" aria-label="Email address">
+            <div class="contact-card-icon" aria-hidden="true">✉️</div>
+            <div>
+              <div class="contact-card-title">Email Address</div>
+              <div class="contact-card-text">drrekha@drclinic.com<br>appointments@drclinic.com</div>
+            </div>
+          </div>
+          <div class="contact-card" role="region" aria-label="Clinic hours">
+            <div class="contact-card-icon" aria-hidden="true">🕐</div>
+            <div>
+              <div class="contact-card-title">Clinic Hours</div>
+              <div class="contact-card-text">
+                Mon – Sat: 9:00 AM – 8:00 PM<br>
+                Sunday: 10:00 AM – 2:00 PM<br>
+                <strong style="color:var(--plum)">Emergency: Call Anytime</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="reveal-right">
+          <div class="map-frame" aria-label="Clinic location map">
+            <!-- Replace src with your actual Google Maps embed URL -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.89796066947!2d77.06889684167635!3d28.52728034901063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1702000000000!5m2!1sen!2sin"
+              width="100%" height="100%" style="border:0; min-height:320px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Clinic location on Google Maps"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            </iframe>
+            <div class="map-placeholder" style="display:none;">
+              <div class="ph-icon" aria-hidden="true">🗺️</div>
+              <p>Google Maps will appear here</p>
+              <small style="color:var(--text-light)">Replace iframe src with your clinic's embed URL</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" aria-label="Website footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px;">
+            <div class="nav-logo-icon">🦷</div>
+            <div class="nav-logo-text">
+              <div class="nav-logo-main">Dr. Rekha's Clinic</div>
+              <div class="nav-logo-sub">Dental &amp; ENT Specialists</div>
+            </div>
+          </div>
+          <p class="footer-desc">Advanced Dental &amp; ENT care delivered with compassion, cutting-edge technology, and a genuine commitment to your wellbeing.</p>
+          <div class="footer-social" role="list" aria-label="Social media links">
+            <a href="#" class="soc-btn" role="listitem" aria-label="Facebook">📘</a>
+            <a href="#" class="soc-btn" role="listitem" aria-label="Instagram">📷</a>
+            <a href="#" class="soc-btn" role="listitem" aria-label="YouTube">▶️</a>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="soc-btn" role="listitem" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Dr. Rekha</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Dental Services -->
+        <div class="footer-col">
+          <h4>Dental Services</h4>
+          <ul>
+            <li><a href="#services">Dental Checkup</a></li>
+            <li><a href="#services">Teeth Cleaning</a></li>
+            <li><a href="#services">Root Canal</a></li>
+            <li><a href="#services">Dental Implants</a></li>
+            <li><a href="#services">Smile Designing</a></li>
+            <li><a href="#services">Tooth Extraction</a></li>
+          </ul>
+        </div>
+
+        <!-- ENT Services -->
+        <div class="footer-col">
+          <h4>ENT Services</h4>
+          <ul>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Ear Infection</a></li>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Sinus Treatment</a></li>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Allergy Care</a></li>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Hearing Consultation</a></li>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Throat Disorders</a></li>
+            <li><a href="#services" onclick="switchTab('ent', document.querySelectorAll('.stab')[1])">Nasal Care</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 Dr. Rekha's Dental &amp; ENT Clinic. All rights reserved.</p>
+        <p>Designed with care by <a href="https://yourportfolio.com" target="_blank" rel="noopener">Prateek</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING ELEMENTS
+  ============================================================ -->
+  <!-- WhatsApp Float Button -->
+  <a id="wa-float" href="https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Dr.%20Rekha's%20Dental%20%26%20ENT%20Clinic."
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">💬</a>
+
+  <!-- Back to Top Button -->
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Sticky CTA (mobile) -->
+  <div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
+    <a href="tel:+919999999999" class="btn btn-outline" aria-label="Call clinic">📞 Call Now</a>
+    <a href="#appointment" class="btn btn-primary" aria-label="Book appointment">📅 Book Now</a>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ============================================================
+       LOADER
+    ============================================================ */
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 2400);
+    });
+
+    /* ============================================================
+       NAVBAR SCROLL BEHAVIOR
+    ============================================================ */
+    const navbar = document.getElementById('navbar');
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+        backTop.classList.add('visible');
+      } else {
+        navbar.classList.remove('scrolled');
+        backTop.classList.remove('visible');
+      }
+    });
+
+    /* ============================================================
+       MOBILE MENU
+    ============================================================ */
+    const hamburger     = document.getElementById('hamburger');
+    const mobileMenu    = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      hamburger.classList.toggle('open', menuOpen);
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', menuOpen);
+    });
+    function closeMobileMenu() {
+      menuOpen = false;
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    /* ============================================================
+       INTERSECTION OBSERVER – REVEAL ANIMATIONS
+    ============================================================ */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    /* ============================================================
+       SERVICES TABS
+    ============================================================ */
+    function switchTab(tab, btn) {
+      // Update tabs
+      document.querySelectorAll('.stab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      // Show/hide panels
+      document.getElementById('tab-dental').style.display = tab === 'dental' ? 'grid' : 'none';
+      document.getElementById('tab-ent').style.display    = tab === 'ent'    ? 'grid' : 'none';
+      // Re-trigger reveal for newly shown cards
+      document.querySelectorAll('#tab-' + tab + ' .reveal').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 50);
+      });
+    }
+
+    /* ============================================================
+       TESTIMONIALS SLIDER
+    ============================================================ */
+    const slider  = document.getElementById('testiSlider');
+    const cards   = slider.querySelectorAll('.testi-card');
+    const dotsWrap= document.getElementById('testiDots');
+    let current   = 0;
+    let visCount  = 3;
+    let autoTimer;
+
+    function getVisCount() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 3;
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const total = cards.length - visCount + 1;
+      for (let i = 0; i < Math.max(total,1); i++) {
+        const d = document.createElement('button');
+        d.className = 'tdot' + (i === current ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to testimonial ' + (i+1));
+        d.setAttribute('role', 'tab');
+        d.onclick = () => goTo(i);
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function goTo(idx) {
+      visCount = getVisCount();
+      const max = cards.length - visCount;
+      current = Math.max(0, Math.min(idx, max));
+      const cardWidth = cards[0].offsetWidth + 24;
+      slider.style.transform = `translateX(-${current * cardWidth}px)`;
+      buildDots();
+    }
+
+    function moveSlider(dir) {
+      goTo(current + dir);
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        visCount = getVisCount();
+        const max = cards.length - visCount;
+        goTo(current < max ? current + 1 : 0);
+      }, 5000);
+    }
+
+    // Init
+    visCount = getVisCount();
+    buildDots();
+    resetAuto();
+    window.addEventListener('resize', () => { visCount = getVisCount(); goTo(current); });
+
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    function toggleFaq(el) {
+      const item     = el.parentElement;
+      const isOpen   = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        el.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    /* ============================================================
+       WHATSAPP APPOINTMENT BOOKING
+    ============================================================ */
+    function bookViaWhatsApp() {
+      const name    = document.getElementById('appt-name').value.trim();
+      const phone   = document.getElementById('appt-phone').value.trim();
+      const service = document.getElementById('appt-service').value;
+      const date    = document.getElementById('appt-date').value;
+      const msg     = document.getElementById('appt-msg').value.trim();
+
+      if (!name || !phone || !service || !date) {
+        alert('Please fill in all required fields (Name, Phone, Service, and Date).');
+        return;
+      }
+
+      const waMsg = encodeURIComponent(
+`Hello Dr. Rekha's Dental & ENT Clinic! 🦷
+
+I would like to book an appointment. Here are my details:
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🩺 Service: ${service}
+📅 Preferred Date: ${date}
+📝 Message: ${msg || 'No additional message.'}
+
+Please confirm my appointment. Thank you!`
+      );
+
+      const waNumber = '919999999999'; // Replace with actual WhatsApp number
+      window.open(`https://wa.me/${waNumber}?text=${waMsg}`, '_blank');
+    }
+
+    /* ============================================================
+       SET DATE MIN TO TODAY
+    ============================================================ */
+    (function() {
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('appt-date');
+      if (dateInput) dateInput.min = today;
+    })();
+
+  </script>
+
+</body>
+</html>
+
+<!--
+===========================================================
+IMAGE ASSETS REQUIRED — Replace placeholders with real images
+===========================================================
+
+1. hero-doctor.png
+   Size: 900×1100px
+   Use: Hero section — primary doctor portrait
+   Style: Dr. Rekha in white doctor coat, professional lighting,
+          warm neutral or clinic background, smiling confidently.
+          Transparent or clean background preferred.
+
+2. about-doctor.jpg
+   Size: 700×850px
+   Use: About section — doctor consulting patient
+   Style: Dr. Rekha seated with a patient across a desk,
+          warm clinic setting, natural and approachable expression.
+
+3. gallery-clinic-exterior.jpg
+   Size: 1200×750px (displayed spanning 2 columns)
+   Use: Gallery — outside view of the clinic
+   Style: Modern clinic facade, bright lighting, clean signage,
+          welcoming entrance. Daytime photo with good lighting.
+
+4. gallery-clinic-interior.jpg
+   Size: 600×600px (square display)
+   Use: Gallery — reception or waiting area
+   Style: Clean modern reception, comfortable seating, soft lighting,
+          purple/mint accent decor matching brand colors.
+
+5. gallery-treatment-room.jpg
+   Size: 600×600px (square display)
+   Use: Gallery — dental or ENT treatment room
+   Style: Well-lit treatment room with dental chair, modern equipment,
+          sterile and organized appearance.
+
+6. gallery-doctor-consultation.jpg
+   Size: 1200×750px (displayed spanning 2 columns)
+   Use: Gallery — doctor-patient consultation
+   Style: Dr. Rekha in consultation with a patient, friendly interaction,
+          bright clinic room, professional but warm atmosphere.
+
+7. gallery-dental-equipment.jpg
+   Size: 800×600px
+   Use: Gallery — advanced dental technology
+   Style: Close-up or wide shot of dental chair, X-ray unit, handpieces,
+          or digital imaging equipment. Clean and modern.
+
+8. gallery-ent-equipment.jpg
+   Size: 800×600px
+   Use: Gallery — ENT diagnostic tools
+   Style: ENT endoscope, audiometry booth, otoscope, or examination
+          instruments. Well-lit, professional clinic setting.
+
+9. favicon.png
+   Size: 64×64px or 512×512px (will be scaled)
+   Use: Browser tab icon and mobile homescreen icon
+   Style: Simple tooth or cross-tooth icon in clinic brand colors
+          (Deep Plum #4B2E83 on white or transparent background).
+
+===========================================================
+WHATSAPP NUMBER — Replace before going live
+===========================================================
+Current placeholder: 919999999999
+Replace ALL occurrences of "919999999999" with the actual
+WhatsApp-enabled number in international format (no + or spaces).
+Example: India +91 98765 43210 → 919876543210
+
+===========================================================
+GOOGLE MAPS — Replace before going live
+===========================================================
+In the <iframe> inside the Contact section, replace the src URL
+with the actual Google Maps embed URL for the clinic location.
+Generate at: https://www.google.com/maps → Share → Embed a map
+
+===========================================================
+PORTFOLIO LINK — Update if needed
+===========================================================
+Two occurrences of https://yourportfolio.com:
+1. Loader screen credit link
+2. Footer "Designed with care by Prateek" link
+Replace with the actual portfolio URL when ready.
+===========================================================
+-->
